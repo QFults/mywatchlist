@@ -1,6 +1,27 @@
+import Home from './pages/Home'
+import Saved from './pages/Saved'
+import Navbar from './components/Navbar'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
 const App = () => {
   return (
-    <h1>Hello World!</h1>
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/saved'>
+            <Saved />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
