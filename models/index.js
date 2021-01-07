@@ -1,3 +1,3 @@
 module.exports = {
-  // your models here...
+  Media: require('./Media.js')
 }
