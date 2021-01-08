@@ -19,7 +19,8 @@ const Media = props => {
   const classes = useStyles()
   const {
     media,
-    handleSaveMedia
+    saved,
+    handleBtnClick
   } = props
 
   return (
@@ -40,14 +41,26 @@ const Media = props => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => handleSaveMedia(media.imdbID)}>
-          Save
-        </Button>
+        {
+          saved ? (
+            <Button
+              size="small"
+              color="secondary"
+              onClick={() => handleBtnClick(media._id)}>
+              Delete
+            </Button>
+          ) : (
+              <Button
+                size="small"
+                color="primary"
+                onClick={() => handleBtnClick(media.imdbID)}>
+                Save
+              </Button>
+            )
+        }
+
       </CardActions>
-    </Card>
+    </Card >
   )
 }
 

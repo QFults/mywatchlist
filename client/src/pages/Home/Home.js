@@ -55,7 +55,8 @@ const Home = () => {
             <Media
               key={media.imdbID}
               media={media}
-              handleSaveMedia={handleSaveMedia} />
+              saved={false}
+              handleBtnClick={handleSaveMedia} />
           )) : null
         }
     </>
